@@ -1,17 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
-const MarkdownInput = () => {
-  const [value, setValue] = useState(0);
-
-  const onValueChange = (event) => {
-    setValue(event.target.value);
-  }
-
+const MarkdownInput = (props) => {
   return (
     <section id="MarkdownInput">
       <h1>MarkdownInput</h1>
-      <p>{value}</p>
-      <input value={value} onChange={onValueChange} />
+      <p>{props.value}</p>
+      <input value={props.value} onChange={props.onChange} />
     </section>
   );
 };
