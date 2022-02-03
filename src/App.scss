@@ -1,12 +1,50 @@
-#App {
-  background-color: rgba(226, 101, 17, 0.829);
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.App {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: rgba(3, 3, 3, 0.966);
   color: white;
-}
+  height: 100vh;
 
-#NoteDisplay {
-  background-color: rgb(26, 94, 6);
-}
+  .nav {
+    margin: 0;
+    padding: 0;
+    flex: 20%;
+    border-right: 11px solid white;
 
-#MarkdownInput {
-  background-color: rgb(255, 51, 0);
+    .NotePreview {
+      padding: 6%;
+    }
+  }
+
+  .page {
+    margin: 0;
+    padding: 22px;
+    flex: 80%;
+
+    .NoteDisplay {
+      margin: 0;
+      padding: 0;
+      background-color: rgb(26, 94, 6);
+      height: 50vh;
+    }
+    
+    .MarkdownInput {
+      margin: 0;
+      padding: 0;
+      background-color: rgb(255, 51, 0);
+      height: 40vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  }
 }
