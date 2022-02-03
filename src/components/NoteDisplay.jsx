@@ -1,22 +1,20 @@
 import React, { useState } from "react";
-import './noteDisplay.scss'
 import Showdown from 'showdown';
 const converter = new Showdown.Converter();
 
 const NoteDisplay = (props) => {
   
-  const createMarkupTitle = () => {
-    return { __html: converter.makeHtml(props.titleValue) };
+  const createMarkup = (content) => {
+    return { __html: converter.makeHtml(content) };
   };
 
-  const createMarkupText = () => {
-    return { __html: converter.makeHtml(props.textValue) };
-  };
- 
+  const title = props.title;
+  const content = props.content;
+
   return (
     <section className="NoteDisplay">
-      <div dangerouslySetInnerHTML={createMarkupTitle()} />
-      <div dangerouslySetInnerHTML={createMarkupText()} />
+      <h1 className="title" dangerouslySetInnerHTML={createMarkup(props.title)} />
+      <p dangerouslySetInnerHTML={createMarkup(props.text)} />
     </section>
   );
 };

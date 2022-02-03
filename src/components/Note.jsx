@@ -1,10 +1,10 @@
 import React from "react";
-import './note.scss';
 
 const Note = (props) => {
+  
   return (
-    <div className="note">
-      <h1>{props.title}</h1>
+    <div id={props.title} className="note" onClick={props.handleClick}>
+      <h1 className="title">{props.title}</h1>
       <p>{props.content}</p>
     </div>
   );
