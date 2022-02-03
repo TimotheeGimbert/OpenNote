@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import './App.scss';
 
 const App = () => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState('Type your text');
 
   const onTyping = (event) => {
     setValue(event.target.value);
@@ -13,8 +13,8 @@ const App = () => {
 
   return (
     <div id="App">
-      <NoteDisplay />
-      <MarkdownInput value={value} onChange={onTyping} />
+      <NoteDisplay textBrut={value}/>
+      <MarkdownInput textBrut={value} onTyping={onTyping} />
     </div>
   );
 }

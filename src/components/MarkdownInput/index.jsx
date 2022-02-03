@@ -4,8 +4,8 @@ const MarkdownInput = (props) => {
   return (
     <section id="MarkdownInput">
       <h1>MarkdownInput</h1>
-      <p>{props.value}</p>
-      <input value={props.value} onChange={props.onChange} />
+      <p>{props.textBrut}</p>
+      <input value={props.textBrut} onChange={props.onTyping} />
     </section>
   );
 };
