@@ -16,7 +16,7 @@ const Nav = (props) => {
           >
           <Note 
             title={title} 
-            text={localStorage[title]} 
+            content={localStorage[title]} 
           />
         </div>
       ))} 

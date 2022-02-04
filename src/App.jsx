@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Nav from './components/Nav'
-import Page from './components/Page'
+import NoteDisplay from './components/NoteDisplay';
+import MarkdownInput from './components/MarkdownInput';
 
 import './App.scss';
 
@@ -12,18 +13,41 @@ const App = () => {
   console.log('TITLE: ', title);
   console.log('CONTENT: ', content);
 
+  const onTitleChange = (event) => {
+    setTitle(event.target.value);
+  }
+  const onContentChange = (event) => {
+    setContent(event.target.value);
+  }
+
   return (
     <div className="App">
       <Nav 
         changeTitle={title => setTitle(title)} 
         changeContent={content => setContent(content)} 
       />
-      <Page 
-        title={title}
-        content={content}  
-      />
+      <div className="page">
+        <NoteDisplay 
+          title={title} 
+          content={content} 
+        />
+        <MarkdownInput 
+          title={title} 
+          content={content} 
+          onTitleChange={onTitleChange} 
+          onContentChange={onContentChange}
+        />
+      {/* <button onClick={handleSave}>Save your note</button> */}
+    </div>
     </div>
   );
 }
 
 export default App;
+
+
+/*   const handleSave = () => {
+    localStorage.setItem(title, text);
+    console.log('NEW NOTE SAVED ', title, text);
+    localStorage.removeItem(props.noteTitle);
+  } */
