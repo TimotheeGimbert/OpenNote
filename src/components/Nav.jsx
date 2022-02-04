@@ -5,7 +5,8 @@ const Nav = (props) => {
 
   return (
     <div className="nav" >
-      {Object.keys(localStorage).map( (title, index) => (
+      <button onClick={() => window.location.reload(false)}>Ajouter une nouvelle note</button>
+      {Object.keys(props.noteList).map( (title, index) => (
         <div 
           onClick={() => {
             props.changeTitle(title);

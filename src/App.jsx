@@ -10,11 +10,6 @@ const App = () => {
   const [content, setContent] = useState('Contenu de la note');
   const [oldTitle, setOldTitle] = useState(title);
 
-  console.log('>>>>>>>>> APP render');
-  console.log('TITLE: ', title);
-  console.log('CONTENT: ', content);
-  console.log('old title: ', oldTitle);
-
   const onTitleChange = (event) => {
     setTitle(event.target.value);
   }
@@ -25,12 +20,13 @@ const App = () => {
   const handleSave = () => {
     localStorage.removeItem(oldTitle);
     localStorage.setItem(title, content);
-    console.log('NEW NOTE SAVED ', title, content);
+    window.location.reload(false);
   }
 
   return (
     <div className="App">
       <Nav 
+        noteList={localStorage}
         changeTitle={title => setTitle(title)} 
         changeContent={content => setContent(content)}
         changeOldTitle={title => setOldTitle(title)} 
@@ -46,7 +42,7 @@ const App = () => {
           onTitleChange={onTitleChange} 
           onContentChange={onContentChange}
         />
-        <button onClick={handleSave}>Save your note</button>
+        <button onClick={handleSave}>Enregistrer la note</button>
       </div>
     </div>
   );
