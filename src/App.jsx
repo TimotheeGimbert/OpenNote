@@ -8,40 +8,38 @@ import './App.scss';
 const App = () => {
   const [title, setTitle] = useState('Titre de la note');
   const [content, setContent] = useState('Contenu de la note');
-  const [oldTitle, setOldTitle] = useState(title);
+  const [previousTitle, setPreviousTitle] = useState(title);
 
-  const onTitleChange = (event) => {
-    setTitle(event.target.value);
-  }
-  const onContentChange = (event) => {
-    setContent(event.target.value);
+  const onTitleChange = (event) => setTitle(event.target.value);
+  const onContentChange = (event) => setContent(event.target.value);
+
+  const handleNav = (title, content) => {
+    setTitle(title);
+    setContent(content);
+    setPreviousTitle(title);
   }
 
   const handleSave = () => {
-    localStorage.removeItem(oldTitle);
+    localStorage.removeItem(previousTitle);
     localStorage.setItem(title, content);
     window.location.reload(false);
   }
 
   return (
     <div className="App">
-      <Nav 
-        noteList={localStorage}
-        changeTitle={title => setTitle(title)} 
-        changeContent={content => setContent(content)}
-        changeOldTitle={title => setOldTitle(title)} 
-      />
+      <Nav selectNote={handleNav} />
+
       <div className="page">
         <NoteDisplay 
           title={title} 
-          content={content} 
-        />
+          content={content} />
+
         <MarkdownInput 
           title={title} 
-          content={content} 
+          content={content}
           onTitleChange={onTitleChange} 
-          onContentChange={onContentChange}
-        />
+          onContentChange={onContentChange} />
+
         <button onClick={handleSave}>Enregistrer la note</button>
       </div>
     </div>
