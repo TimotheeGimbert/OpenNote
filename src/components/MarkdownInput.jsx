@@ -1,19 +1,17 @@
-import React from "react";
+import React, { useState }  from "react";
 
 const MarkdownInput = (props) => {
-
-  const currentTitle = props.title;
+  const [title, setTitle] = useState(props.title);
+  const [content, setContent] = useState(props.content);
   
-  const handleSave = () => {
-    localStorage.setItem(props.title, props.text);
-    props.removeOld();
+  console.log('>>>>>>>>>>>>>>>>>>>>>>> MARKDOWN render');
+  console.log('TITLE: ', title);
+  console.log('CONTENT: ', content);
 
-  }
   return (
     <section className="MarkdownInput">
       <input value={props.title} onChange={props.onTitleChange} />
-      <textarea value={props.text} onChange={props.onTextChange} />
-      <button onClick={handleSave}>Save your note</button>
+      <textarea value={props.content} onChange={props.onContentChange} />
     </section>
   );
 };
