@@ -10,6 +10,7 @@ const Nav = (props) => {
           onClick={() => {
             props.changeTitle(title);
             props.changeContent(localStorage[title]);
+            props.changeOldTitle(title);
             }
           } 
           key={index}

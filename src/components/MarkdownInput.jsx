@@ -1,8 +1,6 @@
 import React, { useState }  from "react";
 
 const MarkdownInput = (props) => {
-  const [title, setTitle] = useState(props.title);
-  const [content, setContent] = useState(props.content);
   
   return (
     <section className="MarkdownInput">
