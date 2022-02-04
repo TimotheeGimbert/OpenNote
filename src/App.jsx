@@ -23,8 +23,8 @@ const App = () => {
   }
 
   const handleSave = () => {
-    localStorage.setItem(title, content);
     localStorage.removeItem(oldTitle);
+    localStorage.setItem(title, content);
     console.log('NEW NOTE SAVED ', title, content);
   }
 
