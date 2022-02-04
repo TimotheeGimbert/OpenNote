@@ -22,6 +22,10 @@ const Nav = (props) => {
           />
         </div>
       ))} 
+      <button onClick={() => {
+        localStorage.clear();
+        window.location.reload(false);
+      }}>Supprimer toutes les notes</button>
     </div>
   );
 };
