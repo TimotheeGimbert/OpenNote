@@ -1,3 +1,1 @@
-LIVE VERSION HERE : 
-
-https://open-note.vercel.app/
+[Découvrir le site en ligne](https://openote.vercel.app/)
