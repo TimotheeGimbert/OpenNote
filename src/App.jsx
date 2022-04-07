@@ -3,7 +3,7 @@ import Nav from './components/Nav'
 import NoteDisplay from './components/NoteDisplay';
 import MarkdownInput from './components/MarkdownInput';
 
-import './App.scss';
+// import './App.scss';
 
 const App = () => {
   const [title, setTitle] = useState('Titre de la note');
