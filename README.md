@@ -1,1 +1,1 @@
-[Découvrir le site en ligne](https://openote.vercel.app/)
+[Découvrir Openote en ligne](https://openote.vercel.app/)
