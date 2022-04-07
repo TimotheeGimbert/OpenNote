@@ -1,6 +1,6 @@
 {
-  "homepage": "https://timotheegimbert.github.io/note-free-REACT",
-  "name": "note-free",
+  "homepage": "https://timotheegimbert.github.io/OpenNote",
+  "name": "open-note",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
